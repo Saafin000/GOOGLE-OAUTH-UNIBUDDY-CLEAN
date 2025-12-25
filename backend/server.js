@@ -27,6 +27,11 @@ mongoose.connect(process.env.MONGO_URI).then(() =>
 
 app.use("/api/auth", authRoutes);
 
+app.get("/", (req, res) => {
+  res.status(200).send("Backend is running 🚀");
+});
+
+
 app.listen(process.env.PORT, () =>
   console.log(`Server running on ${process.env.PORT}`)
 );
